@@ -1,30 +1,38 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Aw shucks 😅</title>
-  <link rel="stylesheet" href="css/styles.css" />
+  <meta charset="UTF-8">
+  <title>No? 😢</title>
+  <style>
+    body {
+      text-align:center;
+      margin-top:100px;
+      font-family:Arial;
+      background:#f8d7da;
+      overflow:hidden;
+    }
+    #noBtn {
+      padding:10px 20px;
+      background:#ccc;
+      border:none;
+      border-radius:8px;
+      cursor:pointer;
+      position:absolute;
+    }
+  </style>
 </head>
 <body>
-  <canvas id="petal-canvas"></canvas>
+  <h1>No?? Are you sure? 🥺</h1>
+  <button id="noBtn">No</button>
+  <p>Try again... maybe say YES 💕</p>
+  <a href="index.html">Back</a>
 
-  <main class="card card-no">
-    <header class="card-header">
-      <h1>Oh no 😅</h1>
-      <p class="sub">That's okay — honesty is cute too.</p>
-    </header>
-
-    <section class="card-body">
-      <p class="lead">If you picked "No", I’ll still be here — with extra snacks and better jokes next time.</p>
-
-      <div class="choices">
-        <a class="btn btn-try" href="index.html">Try again</a>
-        <a class="btn btn-note" href="note.html">Read the note</a>
-      </div>
-    </section>
-  </main>
-
-  <script src="js/main.js" defer></script>
+  <script>
+    const btn = document.getElementById("noBtn");
+    btn.addEventListener("mouseover", () => {
+      btn.style.top = Math.random() * window.innerHeight + "px";
+      btn.style.left = Math.random() * window.innerWidth + "px";
+    });
+  </script>
 </body>
 </html>

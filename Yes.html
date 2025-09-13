@@ -1,37 +1,44 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Yesss! 🎉</title>
-  <link rel="stylesheet" href="css/styles.css" />
+  <meta charset="UTF-8">
+  <title>Yay! ❤️</title>
+  <style>
+    body {
+      text-align:center;
+      margin-top:100px;
+      background:#ffe4e1;
+      font-family:Arial;
+      overflow:hidden;
+    }
+    .flower {
+      position: absolute;
+      top: -50px;
+      font-size: 24px;
+      animation: fall 6s linear infinite;
+    }
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0deg); }
+      100% { transform: translateY(100vh) rotate(360deg); }
+    }
+  </style>
 </head>
 <body>
-  <canvas id="petal-canvas"></canvas>
+  <h1>You said YES!! 🎉</h1>
+  <p>You make me the happiest person alive 💖</p>
+  <a href="love.html">Click here for a surprise 🌸</a>
 
-  <main class="card card-yes">
-    <header class="card-header">
-      <h1>She said YES ✨</h1>
-      <p class="sub">My heart is dancing.</p>
-    </header>
-
-    <section class="card-body">
-      <div class="surprise">
-        <p>Because you said yes — here’s a tiny promise:</p>
-        <ul>
-          <li>More silly jokes</li>
-          <li>Unexpected notes</li>
-          <li>Warm hugs & stolen cookies</li>
-        </ul>
-      </div>
-
-      <div class="choices">
-        <a class="btn btn-yes" href="note.html">Read the note again</a>
-        <a class="btn btn-back" href="index.html">Back to start</a>
-      </div>
-    </section>
-  </main>
-
-  <script src="js/main.js" defer></script>
+  <script>
+    function createFlower() {
+      const flower = document.createElement("div");
+      flower.innerHTML = "🌸";
+      flower.classList.add("flower");
+      flower.style.left = Math.random() * window.innerWidth + "px";
+      flower.style.animationDuration = (3 + Math.random()*3) + "s";
+      document.body.appendChild(flower);
+      setTimeout(() => flower.remove(), 6000);
+    }
+    setInterval(createFlower, 300);
+  </script>
 </body>
 </html>

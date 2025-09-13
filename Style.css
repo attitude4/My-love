@@ -1,0 +1,102 @@
+:root{
+  --bg:#FFF8F6;
+  --card:#ffffff;
+  --accent:#ff6fa3;
+  --muted:#6b6b6b;
+  --glass: rgba(255,255,255,0.8);
+  --maxw:760px;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background: linear-gradient(180deg, #fffaf9 0%, #fff5f8 100%);
+  color:#222;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:32px;
+  overflow:hidden;
+}
+
+/* card */
+.card{
+  position:relative;
+  z-index:2;
+  width:100%;
+  max-width:var(--maxw);
+  background:var(--card);
+  border-radius:18px;
+  box-shadow: 0 12px 40px rgba(35,20,30,0.12);
+  padding:28px;
+  text-align:center;
+  transform-origin:center;
+  animation: floatIn 600ms ease-out both;
+}
+@keyframes floatIn{ from{ transform: translateY(12px) scale(.99); opacity:0 } to{ transform:none; opacity:1 } }
+
+.card-header h1, .card-header h2{ margin:0 0 8px; font-weight:700; letter-spacing:-0.5px }
+.card-header .sub{ margin:0; color:var(--muted) }
+
+.card-body{ margin-top:18px }
+.lead{ font-size:1.25rem; margin:0 0 16px; color:#333 }
+.choices{ display:flex; gap:12px; justify-content:center; margin-top:12px; flex-wrap:wrap }
+.choices.small{ margin-top:8px }
+
+.btn{
+  display:inline-block;
+  padding:10px 18px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:600;
+  transition:transform .12s ease, box-shadow .12s ease;
+  box-shadow: 0 6px 18px rgba(35,20,30,0.08);
+}
+.btn:active{ transform:translateY(2px) }
+
+.btn-yes{
+  background:linear-gradient(90deg,#ff9ccf,#ff6fa3);
+  color:white; border:0;
+}
+.btn-no{
+  background:transparent;
+  border:2px solid #ffdce6;
+  color:var(--accent);
+}
+.btn-back{ background:transparent; color:var(--muted); border:1px solid #eee; padding:8px 14px }
+.btn-try{ background:#ffdfe9; color:#6b1633; border:0 }
+.btn-note{ background:#fff0f4; color:#7a1433 }
+
+.link-note{ display:block; margin-top:10px; color:var(--accent); text-decoration:none; font-weight:600 }
+
+.card-note{ max-width:640px; text-align:left }
+.love-note{ font-size:1rem; color:#3b2a2f; line-height:1.6; background:linear-gradient(180deg, rgba(255,250,250,0.6), rgba(255,250,250,0.4)); padding:16px; border-radius:10px; box-shadow: inset 0 1px 0 rgba(255,255,255,0.6) }
+
+.card-footer{ margin-top:14px; color:var(--muted); font-size:0.85rem }
+
+/* mobile adjustments */
+@media (max-width:520px){
+  body{ padding:18px }
+  .card{ padding:20px; border-radius:14px }
+  .lead{ font-size:1.05rem }
+}
+
+/* subtle sparkle under yes button when hovered */
+.btn-yes:hover{
+  box-shadow: 0 16px 30px rgba(255,110,150,0.18);
+  transform: translateY(-3px);
+}
+
+/* small decorative ribbons */
+.card-header::after{
+  content:'';
+  display:block;
+  width:54px;
+  height:6px;
+  margin:12px auto 0;
+  border-radius:4px;
+  background:linear-gradient(90deg,#ffd5e3,#ffd1da);
+  opacity:.9;
+}

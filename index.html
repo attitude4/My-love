@@ -1,37 +1,31 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>For You — 💌</title>
-  <link rel="stylesheet" href="css/styles.css" />
+  <meta charset="UTF-8">
+  <title>For You ❤️</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      background: #fff0f5;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 20px;
+      font-size: 18px;
+      cursor: pointer;
+      border-radius: 8px;
+      border: none;
+      transition: 0.3s;
+    }
+    .yes { background-color: #ff69b4; color: white; }
+    .no { background-color: #ccc; }
+  </style>
 </head>
 <body>
-  <canvas id="petal-canvas"></canvas>
-
-  <main class="card">
-    <header class="card-header">
-      <h1>Hey love ✨</h1>
-      <p class="sub">I made this little surprise just for you.</p>
-    </header>
-
-    <section class="card-body">
-      <p class="lead">Will you let me keep making you smile?</p>
-
-      <div class="choices">
-        <a class="btn btn-yes" href="yes.html">Yes 💖</a>
-        <a class="btn btn-no" href="no.html">No 😭</a>
-      </div>
-
-      <p class="hint">(You can also peek at the note)</p>
-      <a class="link-note" href="note.html">Open her note ✉️</a>
-    </section>
-
-    <footer class="card-footer">
-      <small>Made with 💙 — one petal at a time.</small>
-    </footer>
-  </main>
-
-  <script src="js/main.js" defer></script>
+  <h1>Will you be my forever? 💕</h1>
+  <button class="yes" onclick="location.href='yes.html'">Yes</button>
+  <button class="no" onclick="location.href='no.html'">No</button>
 </body>
 </html>
